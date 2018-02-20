@@ -1,25 +1,25 @@
 Package: RcmdrPlugin.KMggplot2
 Type: Package
 Title: R Commander Plug-in for Data Visualization with 'ggplot2'
-Version: 0.2-4
+Version: 0.2-5
 Author: Triad sou. and Kengo NAGASHIMA
 Maintainer: Triad sou. <triadsou@gmail.com>
 Depends: 
     R (>= 3.2.0),
     grid,
-    Rcmdr (>= 2.3-1),
-    ggplot2 (>= 2.2.0)
+    Rcmdr (>= 2.4-1),
+    ggplot2 (>= 2.2.1)
 Imports: 
     stats,
     methods,
     utils,
     grDevices,
     graphics,
-    ggthemes (>= 3.3.0),
+    ggthemes (>= 3.4.0),
     plyr (>= 1.8.4),
     RColorBrewer (>= 1.1-2),
-    scales (>= 0.4.1),
-    survival (>= 2.40-1),
+    scales (>= 0.5.0),
+    survival (>= 2.41-3),
     tcltk2 (>= 1.2-11)
 Suggests:
     extrafont,
