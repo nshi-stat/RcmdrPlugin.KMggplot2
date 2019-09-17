@@ -6,21 +6,21 @@ Authors@R: c(
   person("Triad", "sou.", email = "triadsou@gmail.com", role = c("aut", "cre")),
   person("Kengo", "Nagashima", role = c("aut"), comment = c(ORCID = "0000-0003-4529-9045")))
 Depends: 
-    R (>= 3.2.0),
+    R (>= 3.5.0),
     grid,
-    Rcmdr (>= 2.4-1),
-    ggplot2 (>= 2.2.1)
+    Rcmdr (>= 2.6-0),
+    ggplot2 (>= 3.2.1)
 Imports: 
     stats,
     methods,
     utils,
     grDevices,
     graphics,
-    ggthemes (>= 3.4.0),
+    ggthemes (>= 4.2.0),
     plyr (>= 1.8.4),
     RColorBrewer (>= 1.1-2),
-    scales (>= 0.5.0),
-    survival (>= 2.41-3),
+    scales (>= 1.0.0),
+    survival (>= 2.44-1.1),
     tcltk2 (>= 1.2-11)
 Suggests:
     extrafont,
@@ -64,5 +64,5 @@ Collate:
     'util-lastcom.r'
     'util-nonFactors.r'
     'zzz.r'
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1
 VignetteBuilder: knitr
