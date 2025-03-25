@@ -2,6 +2,10 @@
 # RcmdrPlugin.KMggplot2 package
 
 
+## Changes in version 0.2-7 (2025-03-25)
+* Fixed errors in Rd files.
+
+
 ## Changes in version 0.2-6 (2019-09-17)
 * Fixed a bug: Rd files.
 * New ggthemes's themes (theme_clean, theme_economist_white, theme_excel_new, theme_solarized_2).

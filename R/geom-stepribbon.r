@@ -10,7 +10,23 @@
 #' @seealso
 #'   \code{\link[ggplot2:geom_ribbon]{geom_ribbon}} \code{geom_stepribbon}
 #'   inherits from \code{geom_ribbon}.
-#' @inheritParams ggplot2:::geom_ribbon
+#' @param mapping Set of aesthetic mappings created by \code{aes()}. If 
+#' specified and inherit.aes = TRUE (the default), it is combined with the
+#' default mapping at the top level of the plot. You must supply mapping if
+#' there is no plot mapping.
+#' @param data The data to be displayed in this layer.
+#' @param stat The statistical transformation to use on the data for this layer.
+#' @param position A position adjustment to use on the data for this layer.
+#' @param na.rm If FALSE, the default, missing values are removed with a
+#' warning. If TRUE, missing values are silently removed.
+#' @param show.legend logical. Should this layer be included in the legends?
+#' NA, the default, includes if any aesthetics are mapped. FALSE never includes,
+#' and TRUE always includes. It can also be a named logical vector to finely
+#' select the aesthetics to display.
+#' @param inherit.aes If FALSE, overrides the default aesthetics, rather than
+#' combining with them. This is most useful for helper functions that define
+#' both data and aesthetics and shouldn't inherit behaviour from the default
+#' plot specification, e.g. \code{borders()}.
 #' @param kmplot If \code{TRUE}, missing values are replaced by the previous
 #' values. This option is needed to make Kaplan-Meier plots if the last
 #' observation has event, in which case the upper and lower values of the
