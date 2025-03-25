@@ -3,7 +3,8 @@
 
 
 ## Changes in version 0.2-7 (2025-03-25)
-* Fixed errors in Rd files.
+* Fixed errors and warnings.
+* Update for ggplot2 3.4.0.
 
 
 ## Changes in version 0.2-6 (2019-09-17)

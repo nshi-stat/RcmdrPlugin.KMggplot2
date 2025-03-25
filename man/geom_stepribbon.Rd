@@ -48,6 +48,8 @@ values. This option is needed to make Kaplan-Meier plots if the last
 observation has event, in which case the upper and lower values of the
 last observation are missing. This processing is optimized for results
 from the survfit function.}
+
+\item{...}{Other arguments passed on to layer()'s params argument.}
 }
 \description{
 \code{geom_stepribbon} is an extension of the \code{geom_ribbon}, and
@@ -68,7 +70,7 @@ h + geom_ribbon(aes(ymin = level - 1, ymax = level + 1), fill = "grey70") +
     geom_line(aes(y = level))
 }
 \seealso{
-\code{\link[ggplot2:geom_ribbon]{geom_ribbon}} \code{geom_stepribbon}
+\code{\link[ggplot2]{geom_ribbon}} \code{geom_stepribbon}
   inherits from \code{geom_ribbon}.
 }
 \keyword{datasets}

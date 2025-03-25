@@ -8,7 +8,7 @@
 #' \Sexpr[results=rd,stage=build]{ggplot2:::rd_aesthetics("geom", "ribbon")}
 #'
 #' @seealso
-#'   \code{\link[ggplot2:geom_ribbon]{geom_ribbon}} \code{geom_stepribbon}
+#'   \code{\link[ggplot2]{geom_ribbon}} \code{geom_stepribbon}
 #'   inherits from \code{geom_ribbon}.
 #' @param mapping Set of aesthetic mappings created by \code{aes()}. If 
 #' specified and inherit.aes = TRUE (the default), it is combined with the
@@ -32,6 +32,7 @@
 #' observation has event, in which case the upper and lower values of the
 #' last observation are missing. This processing is optimized for results
 #' from the survfit function.
+#' @param ... Other arguments passed on to layer()'s params argument.
 #' @examples
 #' huron <- data.frame(year = 1875:1972, level = as.vector(LakeHuron))
 #' h <- ggplot(huron, aes(year))
