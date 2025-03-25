@@ -17,10 +17,7 @@ Imports:
     utils,
     grDevices,
     graphics,
-<<<<<<< HEAD
     rlang,
-=======
->>>>>>> aecc403d2e3376123b4a3b9ee84b57967287f6f9
     ggthemes (>= 5.0.0),
     plyr (>= 1.8.4),
     RColorBrewer (>= 1.1-3),

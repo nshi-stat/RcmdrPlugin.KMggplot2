@@ -20,7 +20,7 @@
 #' • \tab \code{\link[ggplot2:aes_linetype_size_shape]{linewidth}}  \cr\cr
 #' }
 #' @seealso
-#'   \code{\link[ggplot2]{geom_ribbon}} \code{geom_stepribbon}
+#'   \code{\link[ggplot2:geom_ribbon]{geom_ribbon}} \code{geom_stepribbon}
 #'   inherits from \code{geom_ribbon}.
 #' @param mapping Set of aesthetic mappings created by \code{aes()}. If 
 #' specified and inherit.aes = TRUE (the default), it is combined with the
