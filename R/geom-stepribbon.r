@@ -5,8 +5,20 @@
 #' or a confidence band.
 #'
 #' @section Aesthetics:
-#' \Sexpr[results=rd,stage=build]{ggplot2:::rd_aesthetics("geom", "ribbon")}
-#'
+#' \code{geom_stepribbon()} understands the following aesthetics. Required
+#' aesthetics are displayed in bold and defaults are displayed for optional 
+#' aesthetics:
+#' \tabular{rl}{
+#' • \tab \strong{\code{\link[ggplot2:aes_position]{x}} \emph{or} \code{\link[ggplot2:aes_position]{y}}}  \cr\cr
+#' • \tab \strong{\code{\link[ggplot2:aes_position]{ymin}} \emph{or} \code{\link[ggplot2:aes_position]{xmin}}}  \cr\cr
+#' • \tab \strong{\code{\link[ggplot2:aes_position]{ymax}} \emph{or} \code{\link[ggplot2:aes_position]{xmax}}}  \cr\cr
+#' • \tab \code{\link[ggplot2:aes_colour_fill_alpha]{alpha}}  \cr\cr
+#' • \tab \code{\link[ggplot2:aes_colour_fill_alpha]{colour}}  \cr\cr
+#' • \tab \code{\link[ggplot2:aes_colour_fill_alpha]{fill}}  \cr\cr
+#' • \tab \code{\link[ggplot2:aes_group_order]{group}}  \cr\cr
+#' • \tab \code{\link[ggplot2:aes_linetype_size_shape]{linetype}}  \cr\cr
+#' • \tab \code{\link[ggplot2:aes_linetype_size_shape]{linewidth}}  \cr\cr
+#' }
 #' @seealso
 #'   \code{\link[ggplot2:geom_ribbon]{geom_ribbon}} \code{geom_stepribbon}
 #'   inherits from \code{geom_ribbon}.
@@ -19,6 +31,7 @@
 #' @param position A position adjustment to use on the data for this layer.
 #' @param na.rm If FALSE, the default, missing values are removed with a
 #' warning. If TRUE, missing values are silently removed.
+#' @param orientation The orientation of the layer.
 #' @param show.legend logical. Should this layer be included in the legends?
 #' NA, the default, includes if any aesthetics are mapped. FALSE never includes,
 #' and TRUE always includes. It can also be a named logical vector to finely
@@ -27,11 +40,15 @@
 #' combining with them. This is most useful for helper functions that define
 #' both data and aesthetics and shouldn't inherit behaviour from the default
 #' plot specification, e.g. \code{borders()}.
+#' @param outline.type Type of the outline of the area; "both" draws both the
+#' upper and lower lines, "upper"/"lower" draws the respective lines only.
+#' "full" draws a closed polygon around the area.
 #' @param kmplot If \code{TRUE}, missing values are replaced by the previous
 #' values. This option is needed to make Kaplan-Meier plots if the last
 #' observation has event, in which case the upper and lower values of the
 #' last observation are missing. This processing is optimized for results
 #' from the survfit function.
+#' @param ... Other arguments passed on to layer()'s params argument.
 #' @examples
 #' huron <- data.frame(year = 1875:1972, level = as.vector(LakeHuron))
 #' h <- ggplot(huron, aes(year))
@@ -41,10 +58,13 @@
 #'     geom_line(aes(y = level))
 #' @rdname geom_stepribbon
 #' @importFrom ggplot2 layer GeomRibbon
+#' @importFrom rlang list2 arg_match0
 #' @export
 geom_stepribbon <- function(
   mapping = NULL, data = NULL, stat = "identity", position = "identity",
-  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE, kmplot = FALSE, ...) {
+  na.rm = FALSE, orientation = NA, show.legend = NA, inherit.aes = TRUE,
+  outline.type = "both", kmplot = FALSE, ...) {
+  outline.type <- rlang::arg_match0(outline.type, c("both", "upper", "lower", "full"))
   layer(
     data = data,
     mapping = mapping,
@@ -53,8 +73,10 @@ geom_stepribbon <- function(
     position = position,
     show.legend = show.legend,
     inherit.aes = inherit.aes,
-    params = list(
+    params = rlang::list2(
       na.rm = na.rm,
+      orientation = orientation,
+      outline.type = outline.type,
       kmplot = kmplot,
       ...
     )

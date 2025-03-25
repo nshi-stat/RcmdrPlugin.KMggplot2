@@ -12,8 +12,10 @@ geom_stepribbon(
   stat = "identity",
   position = "identity",
   na.rm = FALSE,
+  orientation = NA,
   show.legend = NA,
   inherit.aes = TRUE,
+  outline.type = "both",
   kmplot = FALSE,
   ...
 )
@@ -33,6 +35,8 @@ there is no plot mapping.}
 \item{na.rm}{If FALSE, the default, missing values are removed with a
 warning. If TRUE, missing values are silently removed.}
 
+\item{orientation}{The orientation of the layer.}
+
 \item{show.legend}{logical. Should this layer be included in the legends?
 NA, the default, includes if any aesthetics are mapped. FALSE never includes,
 and TRUE always includes. It can also be a named logical vector to finely
@@ -43,11 +47,17 @@ combining with them. This is most useful for helper functions that define
 both data and aesthetics and shouldn't inherit behaviour from the default
 plot specification, e.g. \code{borders()}.}
 
+\item{outline.type}{Type of the outline of the area; "both" draws both the
+upper and lower lines, "upper"/"lower" draws the respective lines only.
+"full" draws a closed polygon around the area.}
+
 \item{kmplot}{If \code{TRUE}, missing values are replaced by the previous
 values. This option is needed to make Kaplan-Meier plots if the last
 observation has event, in which case the upper and lower values of the
 last observation are missing. This processing is optimized for results
 from the survfit function.}
+
+\item{...}{Other arguments passed on to layer()'s params argument.}
 }
 \description{
 \code{geom_stepribbon} is an extension of the \code{geom_ribbon}, and
@@ -56,7 +66,20 @@ or a confidence band.
 }
 \section{Aesthetics}{
 
-\Sexpr[results=rd,stage=build]{ggplot2:::rd_aesthetics("geom", "ribbon")}
+\code{geom_stepribbon()} understands the following aesthetics. Required
+aesthetics are displayed in bold and defaults are displayed for optional 
+aesthetics:
+\tabular{rl}{
+• \tab \strong{\code{\link[ggplot2:aes_position]{x}} \emph{or} \code{\link[ggplot2:aes_position]{y}}}  \cr\cr
+• \tab \strong{\code{\link[ggplot2:aes_position]{ymin}} \emph{or} \code{\link[ggplot2:aes_position]{xmin}}}  \cr\cr
+• \tab \strong{\code{\link[ggplot2:aes_position]{ymax}} \emph{or} \code{\link[ggplot2:aes_position]{xmax}}}  \cr\cr
+• \tab \code{\link[ggplot2:aes_colour_fill_alpha]{alpha}}  \cr\cr
+• \tab \code{\link[ggplot2:aes_colour_fill_alpha]{colour}}  \cr\cr
+• \tab \code{\link[ggplot2:aes_colour_fill_alpha]{fill}}  \cr\cr
+• \tab \code{\link[ggplot2:aes_group_order]{group}}  \cr\cr
+• \tab \code{\link[ggplot2:aes_linetype_size_shape]{linetype}}  \cr\cr
+• \tab \code{\link[ggplot2:aes_linetype_size_shape]{linewidth}}  \cr\cr
+}
 }
 
 \examples{
